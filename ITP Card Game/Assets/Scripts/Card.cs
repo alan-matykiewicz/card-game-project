@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameObject : MonoBehaviour
+public class Card : MonoBehaviour
 {
 
     public ScriptableCard cardScript;

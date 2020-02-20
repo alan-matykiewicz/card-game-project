@@ -5,6 +5,7 @@ using UnityEngine;
 public class DrawCards : MonoBehaviour
 {
     public GameObject cardPrefab;
+    public GameObject playerHand;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class DrawCards : MonoBehaviour
 
     public void OnClick()
     {
-        Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity);
+        GameObject card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity);
+        card.transform.SetParent(playerHand.transform, false);
     }
 }
