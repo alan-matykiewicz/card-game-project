@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5756728202535997032}
   - component: {fileID: 5756728202535997033}
   - component: {fileID: 5756728202535997039}
+  - component: {fileID: 212599429178146259}
   m_Layer: 5
   m_Name: EnemyDropZone
   m_TagString: Untagged
@@ -95,7 +96,20 @@ MonoBehaviour:
   m_Spacing: 15
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &212599429178146259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5756728202535997035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b617206bff662c4a98b5a00a2da9791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hlg: {fileID: 5756728202535997039}

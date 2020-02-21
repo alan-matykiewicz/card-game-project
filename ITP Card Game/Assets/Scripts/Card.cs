@@ -8,21 +8,33 @@ public class Card : MonoBehaviour
 
     public ScriptableCard cardScript;
 
-    public Text cardName;
-    public Text description;
-    public Text cost;
-    public Text power;
-
+    public Text cardNameText;
+    public Text descriptionText;
+    public Text costText;
+    public Text powerText;
     public Image image;
+
+    public new string name;
+    public int cost;
 
     // Start is called before the first frame update
     void Start()
     {
-        cardName.text       = cardScript.name;
-        description.text    = cardScript.description;
-        cost.text           = cardScript.cost.ToString();
-        power.text          = cardScript.power.ToString();
+        cardNameText.text       = cardScript.name;
+        descriptionText.text    = cardScript.description;
+        costText.text           = cardScript.cost.ToString();
+        powerText.text          = cardScript.power.ToString();
         image.sprite        = cardScript.image;
+
+        name = cardNameText.text;
+        cost = cardScript.cost;
+    }
+
+    public void PlayCard()
+    {
+        //disable / dont show card cost anymore, because the card was already paid for
+        Transform costGroup = transform.Find("Cost Group");
+        costGroup.gameObject.SetActive(false);
     }
 
 }
