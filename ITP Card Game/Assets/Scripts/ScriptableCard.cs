@@ -11,6 +11,9 @@ public class ScriptableCard : ScriptableObject
 
     public int cost;
     public int power;
+    public bool isGold;
+
+    public CardType type;
 
     public Sprite image;
 

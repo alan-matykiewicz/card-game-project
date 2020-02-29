@@ -16,4 +16,6 @@ MonoBehaviour:
   description: Majestic creature
   cost: 1
   power: 99
+  isGold: 0
+  type: 2
   image: {fileID: 21300000, guid: 5c75b53eb08df5f4ea0bd3bdbe009b73, type: 3}
