@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum CardType
-{
-    Human, 
-    Wizard,
-    Beast
-};
+public enum CardType { Human, Wizard, Beast };
+public enum CardCategory { Unit, Instant, Event, Victory };
+public enum Faction { Blue, Black };
 
 public class Card : MonoBehaviour
 {
@@ -29,6 +26,8 @@ public class Card : MonoBehaviour
     public bool isGold;
 
     public CardType[] types;
+    public CardCategory category;
+    public Faction faction;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +50,9 @@ public class Card : MonoBehaviour
         power   = cardScript.power;
         types   = cardScript.types;
         isGold  = cardScript.isGold;
+
+        category    = cardScript.category;
+        faction     = cardScript.faction;
 
         if (isGold)
         {
