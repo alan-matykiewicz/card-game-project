@@ -69,4 +69,11 @@ public class Card : MonoBehaviour
         costGroup.gameObject.SetActive(false);
     }
 
+    public void SetCardScript(ScriptableCard script)
+    {
+        if (script != null)
+            cardScript = script;
+        Start();
+    }
+
 }
