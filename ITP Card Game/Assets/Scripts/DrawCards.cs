@@ -12,6 +12,9 @@ public class DrawCards : MonoBehaviour
     {
         try
         {
+            /*
+             * Fix error 
+             */
             ScriptableCard nextCard = gameData.playerDeck.Draw();
             Card card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<Card>();
             card.SetCardScript(nextCard);
