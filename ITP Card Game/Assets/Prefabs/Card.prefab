@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7e240f7ab7dc646ac289310f66fb16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardScript: {fileID: 11400000, guid: 3cdeb89f3995c8841b11adf7e9c4a4ac, type: 2}
+  cardScript: {fileID: 11400000, guid: cfa0b22ca0ab3c44fa798d121f87e8a2, type: 2}
   goldTemplate: {fileID: 21300000, guid: 61a0a85de567c8547a2b627d0afcd742, type: 3}
   cardNameText: {fileID: 7302317613647087980}
   descriptionText: {fileID: 7302317614120003732}
@@ -148,7 +148,9 @@ MonoBehaviour:
   cost: 0
   power: 0
   isGold: 0
-  type: 0
+  types: 
+  category: 0
+  faction: 0
 --- !u!225 &2016435835562734298
 CanvasGroup:
   m_ObjectHideFlags: 0
