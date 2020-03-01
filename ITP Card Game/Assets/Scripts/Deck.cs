@@ -3,26 +3,20 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck : MonoBehaviour
+public class Deck : ScriptableObject
 {
-    public List<Card> original;
-    public List<Card> instance;
+    public List<ScriptableCard> original;
+    public List<ScriptableCard> instance;
 
     public byte maxDeckSize = 35;
     public byte minMaxRegularCards = 30;
     public byte minVictoryCards = 3;
     public byte maxVictoryCards = 5;
 
-    public Deck()
+    public void Init(List<ScriptableCard> list)
     {
-        original = new List<Card>();
-        instance = original;
-    }
-
-    public Deck(List<Card> cards)
-    {
-        original = cards;
-        instance = original;
+        original = list;
+        instance = new List<ScriptableCard>(original);
     }
 
     /**
@@ -36,29 +30,22 @@ public class Deck : MonoBehaviour
         {
             n--;
             int k = rand.Next(n + 1);
-            Card value = instance[k];
+            ScriptableCard value = instance[k];
             instance[k] = instance[n];
             instance[n] = value;
         }
     }
 
-    public Card Draw()
+    public ScriptableCard Draw()
     {
-        Card temp = instance[0];
+        ScriptableCard temp = instance[0];
         instance.RemoveAt(0);
         return temp;
     }
 
     public bool AddCard(ScriptableCard script)
     {
-        Card card = new Card();
-        card.SetCardScript(script);
-        return AddCard(card);
-    }
-
-    public bool AddCard(Card card)
-    {
-        original.Add(card);
+        original.Add(script);
         return true;
     }
 

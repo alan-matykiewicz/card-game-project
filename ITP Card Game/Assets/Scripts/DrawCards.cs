@@ -6,10 +6,20 @@ public class DrawCards : MonoBehaviour
 {
     public GameObject cardPrefab;
     public GameObject playerHand;
+    public ScriptableGameData gameData;
 
     public void OnClick()
     {
-        GameObject card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity);
-        card.transform.SetParent(playerHand.transform, false);
+        try
+        {
+            ScriptableCard nextCard = gameData.playerDeck.Draw();
+            Card card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<Card>();
+            card.SetCardScript(nextCard);
+            card.transform.SetParent(playerHand.transform, false);
+        }
+        catch (System.ArgumentOutOfRangeException)
+        {
+            Debug.Log("No more cards to draw.");
+        }
     }
 }

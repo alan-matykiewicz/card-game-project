@@ -6,10 +6,14 @@ public class GameHandler : MonoBehaviour
 {
     public ScriptableGameData gameData;
 
+    public ScriptableCard[] cards;
+
     // Start is called before the first frame update
     void Start()
     {
-        Deck deck = new Deck();
-
+        List<ScriptableCard> l = new List<ScriptableCard>(cards);
+        Deck deck = ScriptableObject.CreateInstance("Deck") as Deck;
+        deck.Init(l);
+        gameData.playerDeck = deck;
     }
 }
