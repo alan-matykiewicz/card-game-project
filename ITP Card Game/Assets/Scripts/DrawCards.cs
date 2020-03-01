@@ -15,7 +15,15 @@ public class DrawCards : MonoBehaviour
             ScriptableCard nextCard = gameData.playerDeck.Draw();
             Card card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<Card>();
             card.SetCardScript(nextCard);
-            card.transform.SetParent(playerHand.transform, false);
+            if (gameData.playerHand.Count < ScriptableGameData.cardHandLimit)
+            {
+                gameData.playerHand.Add(card);
+                card.transform.SetParent(playerHand.transform, false);
+            }
+            else
+            {
+                Debug.Log("Deine Hand ist voll");
+            }
         }
         catch (System.ArgumentOutOfRangeException)
         {
