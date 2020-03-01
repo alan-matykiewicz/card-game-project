@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum CardType { Human, Wizard, Beast };
+public enum CardType { Human, Building, Farm, Soldier};
 public enum CardCategory { Unit, Instant, Event, Victory };
 public enum Faction { Blue, Black };
 
