@@ -28,7 +28,7 @@ public class Card : MonoBehaviour
     public int power;
     public bool isGold;
 
-    public CardType type;
+    public CardType[] types;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +39,17 @@ public class Card : MonoBehaviour
         powerText.text          = cardScript.power.ToString();
         image.sprite            = cardScript.image;
 
-        typeText.text = cardScript.type.ToString();
+        string txt = "";
+        for(int i = 0; i < cardScript.types.Length; i++)
+        {
+            txt += cardScript.types[i] + " ";
+        }
+        typeText.text = txt;
 
         name    = cardNameText.text;
         cost    = cardScript.cost;
         power   = cardScript.power;
-        type    = cardScript.type;
+        types   = cardScript.types;
         isGold  = cardScript.isGold;
 
         if (isGold)

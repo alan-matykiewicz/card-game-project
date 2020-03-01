@@ -13,7 +13,7 @@ public class ScriptableCard : ScriptableObject
     public int power;
     public bool isGold;
 
-    public CardType type;
+    public CardType[] types;
 
     public Sprite image;
 
