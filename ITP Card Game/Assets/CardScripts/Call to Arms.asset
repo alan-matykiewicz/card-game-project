@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa86e919a23b344a9a1400b4437ff2b, type: 3}
   m_Name: Call to Arms
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cost: 0
+  name: Call to Arms
+  description: 'Look at the top 3 cards in your deck, you may choose 1 <Soldier>
+    card to add to your hand. Shuffle the other cards back in your deck. '
+  cost: 10
   power: 0
   isGold: 0
   types: 
-  category: 0
+  category: 1
   faction: 0
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 42a1da3ae55fddb41b4e113460a5455d, type: 3}

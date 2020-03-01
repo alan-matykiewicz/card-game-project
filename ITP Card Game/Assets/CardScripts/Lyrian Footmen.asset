@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa86e919a23b344a9a1400b4437ff2b, type: 3}
   m_Name: Lyrian Footmen
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cost: 0
-  power: 0
+  name: Lyrian Footmen
+  description: 'Reinforce: 5. Deploy: Find a copy of this card in your deck and put
+    it in your hand. '
+  cost: 12
+  power: 10
   isGold: 0
-  types: 
+  types: 0000000003000000
   category: 0
   faction: 0
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: c428e674559c71849b5f8eeefa2057e1, type: 3}

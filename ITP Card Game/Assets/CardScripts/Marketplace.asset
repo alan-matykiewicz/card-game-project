@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa86e919a23b344a9a1400b4437ff2b, type: 3}
   m_Name: Marketplace
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cost: 0
-  power: 0
+  name: Marketplace
+  description: 'Every turn, if you have at least 2 other units in play, Gain: 5.'
+  cost: 20
+  power: 10
   isGold: 0
-  types: 
+  types: 01000000
   category: 0
   faction: 0
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: ef2222734855e3f499ba6401e8aad011, type: 3}
