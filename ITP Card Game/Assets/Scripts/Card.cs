@@ -60,6 +60,13 @@ public class Card : MonoBehaviour
             Image background = temp.gameObject.GetComponent<Image>();
             background.sprite = goldTemplate;
         }
+
+        if (cardScript.category.Equals(CardCategory.Instant))
+        {
+            Transform powerGroup = transform.Find("Power Group");
+            powerGroup.gameObject.SetActive(false);
+            typeText.text = "Instant";
+        }
     }
 
     public void PlayCard()
