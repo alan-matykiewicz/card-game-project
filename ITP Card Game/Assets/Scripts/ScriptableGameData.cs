@@ -6,10 +6,11 @@ using UnityEngine;
 public class ScriptableGameData : ScriptableObject
 {
     public static byte cardHandLimit = 10;
+    public static byte startCoins = 20;
 
     //PLAYER-DATA
     //player username
-    //player coins
+    public short playerCoins;
     //player VPs
     public Deck playerDeck;
     public List<Card> playerHand;

@@ -81,6 +81,8 @@ public class Card : MonoBehaviour
         //remove this card from player's hand
         GameHandler handler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
         handler.GetComponent<GameHandler>().gameData.playerHand.Remove(this);
+        Ability gain = new A_Gain(5);
+        gain.Use();
     }
 
     public void SetCardScript(ScriptableCard script)

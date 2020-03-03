@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff56d9e0f4ad6d46ba9be4b5abcdb68, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
+  playerCoins: 0
   playerDeck: {fileID: 0}
-  playerHand:
-  - {fileID: 0}
+  playerHand: []
