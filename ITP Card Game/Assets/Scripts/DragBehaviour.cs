@@ -13,6 +13,9 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (this.GetComponent<Card>().IsPlayed())
+            return;
+
         placeholder = new GameObject();
         placeholder.transform.SetParent(this.transform.parent);
         placeholder.transform.localScale = new Vector3(1,1,1);
@@ -32,6 +35,9 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (this.GetComponent<Card>().IsPlayed())
+            return;
+
         transform.position = Input.mousePosition;
 
         if (placeholder.transform.parent != placeholderParent)
@@ -62,5 +68,10 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
         Destroy(placeholder);
+
+        if (this.GetComponent<Card>().IsPlayed())
+        {
+            this.enabled = false;
+        }
     }
 }

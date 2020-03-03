@@ -10,7 +10,6 @@ public class Deck : ScriptableObject
 
     public byte maxDeckSize = 35;
     public byte minMaxRegularCards = 30;
-    public byte minVictoryCards = 3;
     public byte maxVictoryCards = 5;
 
     public void Init(List<ScriptableCard> list)
@@ -52,6 +51,6 @@ public class Deck : ScriptableObject
     public bool IsValid()
     {
         byte size = (byte) original.Count;
-        return size >= 33 && size <= 35;
+        return size >= minMaxRegularCards && size <= maxDeckSize;
     }
 }

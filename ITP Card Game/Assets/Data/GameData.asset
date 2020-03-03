@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   playerDeck: {fileID: 0}
+  playerHand:
+  - {fileID: 0}

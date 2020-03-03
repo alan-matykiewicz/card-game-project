@@ -15,5 +15,7 @@ public class GameHandler : MonoBehaviour
         Deck deck = ScriptableObject.CreateInstance("Deck") as Deck;
         deck.Init(l);
         gameData.playerDeck = deck;
+        gameData.playerHand = new List<Card>();
+        gameData.playerDeck.Shuffle();
     }
 }

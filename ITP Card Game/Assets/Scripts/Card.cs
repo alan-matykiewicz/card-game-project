@@ -25,6 +25,9 @@ public class Card : MonoBehaviour
     public int power;
     public bool isGold;
 
+    [SerializeField]
+    private bool isPlayed = false;
+
     public CardType[] types;
     public CardCategory category;
     public Faction faction;
@@ -56,14 +59,14 @@ public class Card : MonoBehaviour
 
         if (isGold)
         {
-            Transform temp = transform.Find("Card Background");
+            Transform temp = transform.Find("Card Front/Card Background");
             Image background = temp.gameObject.GetComponent<Image>();
             background.sprite = goldTemplate;
         }
 
         if (cardScript.category.Equals(CardCategory.Instant))
         {
-            Transform powerGroup = transform.Find("Power Group");
+            Transform powerGroup = transform.Find("Card Front/Power Group");
             powerGroup.gameObject.SetActive(false);
             typeText.text = "Instant";
         }
@@ -71,9 +74,13 @@ public class Card : MonoBehaviour
 
     public void PlayCard()
     {
+        isPlayed = true;
         //disable / dont show card cost anymore, because the card was already paid for
-        Transform costGroup = transform.Find("Cost Group");
+        Transform costGroup = transform.Find("Card Front/Cost Group");
         costGroup.gameObject.SetActive(false);
+        //remove this card from player's hand
+        GameHandler handler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
+        handler.GetComponent<GameHandler>().gameData.playerHand.Remove(this);
     }
 
     public void SetCardScript(ScriptableCard script)
@@ -81,6 +88,11 @@ public class Card : MonoBehaviour
         if (script != null)
             cardScript = script;
         Start();
+    }
+
+    public bool IsPlayed()
+    {
+        return isPlayed;
     }
 
 }
