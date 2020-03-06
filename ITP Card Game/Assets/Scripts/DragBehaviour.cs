@@ -11,6 +11,8 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private GameObject placeholder = null;
 
+    private Vector2 offsetVector;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (this.GetComponent<Card>().IsPlayed())
@@ -26,6 +28,8 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         le.flexibleWidth = 0;
         le.flexibleHeight = 0;
 
+        offsetVector = eventData.position - (Vector2)transform.position;
+
         ogParent = transform.parent;
         placeholderParent = ogParent;
         transform.SetParent(transform.parent.parent);
@@ -38,7 +42,7 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (this.GetComponent<Card>().IsPlayed())
             return;
 
-        transform.position = Input.mousePosition;
+        transform.position = (Vector2)Input.mousePosition - offsetVector;
 
         if (placeholder.transform.parent != placeholderParent)
             placeholder.transform.SetParent(placeholderParent);
@@ -66,6 +70,8 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+        offsetVector = new Vector2(0, 0);
 
         Destroy(placeholder);
 
