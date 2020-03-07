@@ -25,6 +25,8 @@ public class Card : MonoBehaviour
     public int power;
     public bool isGold;
 
+    public Ability[] abilities;
+
     [SerializeField]
     private bool isPlayed = false;
 
@@ -70,6 +72,8 @@ public class Card : MonoBehaviour
             powerGroup.gameObject.SetActive(false);
             typeText.text = "Instant";
         }
+
+        abilities = cardScript.abilities;
     }
 
     public void PlayCard()
@@ -81,8 +85,15 @@ public class Card : MonoBehaviour
         //remove this card from player's hand
         GameHandler handler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
         handler.GetComponent<GameHandler>().gameData.playerHand.Remove(this);
-        Ability gain = new A_Gain(5);
-        gain.Use();
+
+        //when a card is played, all of its abilities are used
+        if (abilities != null)
+        {
+            foreach(Ability a in abilities)
+            {
+                a.Use();
+            }
+        }
     }
 
     public void SetCardScript(ScriptableCard script)

@@ -13,10 +13,12 @@ public class ScriptableCard : ScriptableObject
     public int power;
     public bool isGold;
 
+    public Ability[] abilities;
+
     public CardType[] types;
     public CardCategory category;
     public Faction faction;
 
     public Sprite image;
-
+  
 }

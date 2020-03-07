@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ability
+public class Ability : ScriptableObject
 {
     protected ScriptableGameData gameData;
 
-    public Ability()
+    public virtual void Use()
     {
-        gameData = GameObject.Find("GameHandler").GetComponent<GameHandler>().gameData;
+        //nothing here
     }
-
-    public abstract void Use();
 }

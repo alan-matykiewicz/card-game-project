@@ -5,22 +5,14 @@ using UnityEngine;
 /**
  * This ability grants you coins
  */
+[CreateAssetMenu(fileName ="New Gain" , menuName ="Ability/Gain")]
 public class A_Gain : Ability
 {
-    private short coinsToGain;
-
-    public A_Gain(short coins)
-    {
-        coinsToGain = coins;
-    }
+    public short coinsToGain;
 
     public override void Use()
     {
-        Gain(coinsToGain);
-    }
-
-    public void Gain(short coins)
-    {
-        gameData.playerCoins += coins;
+        gameData = GameHandler.Instance.gameData;
+        gameData.playerCoins += coinsToGain;
     }
 }

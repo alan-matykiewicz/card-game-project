@@ -664,10 +664,10 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 1c0fbca4af0d7f245822fa8cb0321b7e, type: 2}
   cards:
   - {fileID: 11400000, guid: cfa0b22ca0ab3c44fa798d121f87e8a2, type: 2}
-  - {fileID: 11400000, guid: 7514bfc35a3364c47a90606e64b78793, type: 2}
+  - {fileID: 11400000, guid: cfa0b22ca0ab3c44fa798d121f87e8a2, type: 2}
   - {fileID: 11400000, guid: 2e3c030187afc8e4e95ef44df42fa1ac, type: 2}
   - {fileID: 11400000, guid: 57c4d5a21f5eff44db4aa257155a72bc, type: 2}
-  - {fileID: 11400000, guid: 3d26320e1b89b1e4baefee904ced27ae, type: 2}
+  - {fileID: 11400000, guid: b155ba44113069c42b52447b68d4f207, type: 2}
   - {fileID: 11400000, guid: 57c4d5a21f5eff44db4aa257155a72bc, type: 2}
   - {fileID: 11400000, guid: 0c3d1cbff73bf9642a4a19eb9da220c6, type: 2}
   - {fileID: 11400000, guid: 0c3d1cbff73bf9642a4a19eb9da220c6, type: 2}

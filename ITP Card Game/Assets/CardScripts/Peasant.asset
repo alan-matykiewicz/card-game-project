@@ -17,6 +17,9 @@ MonoBehaviour:
   cost: 0
   power: 2
   isGold: 0
+  abilities:
+  - {fileID: 11400000, guid: fd400bc74f4583c41a3addd134576f3a, type: 2}
+  - {fileID: 11400000, guid: fd400bc74f4583c41a3addd134576f3a, type: 2}
   types: 00000000
   category: 0
   faction: 0

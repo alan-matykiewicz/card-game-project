@@ -17,6 +17,7 @@ MonoBehaviour:
   cost: 20
   power: 10
   isGold: 0
+  abilities: []
   types: 01000000
   category: 0
   faction: 0
