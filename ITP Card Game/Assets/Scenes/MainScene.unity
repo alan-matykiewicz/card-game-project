@@ -344,7 +344,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Draw Card
+  m_Text: END TURN
 --- !u!222 &575421124
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 668416962}
   - component: {fileID: 668416965}
   m_Layer: 5
-  m_Name: DrawCardBtn
+  m_Name: End Turn Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,8 +509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 328, y: -64}
-  m_SizeDelta: {x: 102.4, y: 30}
+  m_AnchoredPosition: {x: 339.88, y: -64}
+  m_SizeDelta: {x: 78.64, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668416962
 MonoBehaviour:

@@ -83,8 +83,8 @@ public class Card : MonoBehaviour
         Transform costGroup = transform.Find("Card Front/Cost Group");
         costGroup.gameObject.SetActive(false);
         //remove this card from player's hand
-        GameHandler handler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
-        handler.GetComponent<GameHandler>().gameData.playerHand.Remove(this);
+        GameHandler handler = GameHandler.Instance;
+        handler.gameData.playerHand.Remove(this);
 
         //when a card is played, all of its abilities are used
         if (abilities != null)

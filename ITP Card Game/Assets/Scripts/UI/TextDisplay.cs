@@ -10,6 +10,6 @@ public class TextDisplay : MonoBehaviour
 
     public void Update()
     {
-        coinText.text = GameObject.Find("GameHandler").GetComponent<GameHandler>().gameData.playerCoins.ToString();
+        coinText.text = GameHandler.Instance.gameData.playerCoins.ToString();
     }
 }

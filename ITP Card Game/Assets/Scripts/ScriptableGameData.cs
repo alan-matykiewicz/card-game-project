@@ -11,15 +11,14 @@ public class ScriptableGameData : ScriptableObject
     //PLAYER-DATA
     //player username
     public short playerCoins;
-    //player VPs
+    public short playerVictoryPoints;
     public Deck playerDeck;
     public List<Card> playerHand;
 
     //OPPONENT-DATA
     //enemy username
-    //enemy coins
-    //enemy VPs
-    //enemy deck
-    //enemy hand
-
+    public short opponentCoins;
+    public short opponentVictoryPoints;
+    public Deck opponentDeck;
+    public List<Card> opponentHand;
 }
