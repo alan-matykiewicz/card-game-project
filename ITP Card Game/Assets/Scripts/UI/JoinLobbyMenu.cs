@@ -22,9 +22,9 @@ public class JoinLobbyMenu : MonoBehaviourPunCallbacks
     public void FindOpponent()
     {
         isConnecting = true;
-
-        waitingStatusText.enabled = false;
+        
         nameInputField.enabled = false;
+        continueButton.enabled = false;
         waitingStatusText.SetText("Searching...");
 
         if (PhotonNetwork.IsConnected)
@@ -50,7 +50,8 @@ public class JoinLobbyMenu : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         waitingStatusText.enabled = false;
-        nameInputField.enabled = false;
+        nameInputField.enabled = true;
+        continueButton.enabled = true;
         Debug.Log($"Disconnected due to: {cause}");
     }
 
@@ -81,7 +82,7 @@ public class JoinLobbyMenu : MonoBehaviourPunCallbacks
         if (PhotonNetwork.CurrentRoom.PlayerCount == MaxPlayerPerRoom)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
-            Debug.Log("Match is ready to begin");
+            Debug.Log("Match is ready to begin. " + newPlayer.NickName);
             waitingStatusText.text = "Opponent Found";
 
             //this line loads the game scene for all player in the room
