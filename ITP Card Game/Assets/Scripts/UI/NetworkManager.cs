@@ -6,8 +6,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JoinLobbyMenu : MonoBehaviourPunCallbacks
+public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    public static NetworkManager instance;
+
     public TextMeshProUGUI waitingStatusText;
     public TMP_InputField nameInputField;
     public Button continueButton;
@@ -17,7 +19,19 @@ public class JoinLobbyMenu : MonoBehaviourPunCallbacks
     private const string GameVersion = "0.1";
     private const int MaxPlayerPerRoom = 2;
 
-    private void Awake() => PhotonNetwork.AutomaticallySyncScene = true;
+    private void Awake()
+    {
+        if(NetworkManager.instance != null && NetworkManager.instance != this)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            instance = this;
+            PhotonNetwork.AutomaticallySyncScene = true;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     public void FindOpponent()
     {
@@ -49,10 +63,14 @@ public class JoinLobbyMenu : MonoBehaviourPunCallbacks
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        waitingStatusText.enabled = false;
-        nameInputField.enabled = true;
-        continueButton.enabled = true;
+        if(waitingStatusText != null)
+        {
+            waitingStatusText.enabled = false;
+            nameInputField.enabled = true;
+            continueButton.enabled = true;
+        }
         Debug.Log($"Disconnected due to: {cause}");
+        PhotonNetwork.LoadLevel("Menu");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -87,6 +105,11 @@ public class JoinLobbyMenu : MonoBehaviourPunCallbacks
 
             //this line loads the game scene for all player in the room
             PhotonNetwork.LoadLevel("MainScene");
+            Dictionary<int, Player> dict = PhotonNetwork.CurrentRoom.Players;
+            foreach (KeyValuePair<int, Player> item in dict)
+            {
+                Debug.Log("Key: "+item.Key+", Value: "+item.Value.NickName);
+            }
         }
     }
 }
