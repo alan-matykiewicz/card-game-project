@@ -1,0 +1,39 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class CardFocus : MonoBehaviour, IPointerClickHandler
+{
+    public GameObject cardPrefab;
+    private Card cardCopy;
+    public GameObject backgroundPrefab;
+    private GameObject background;
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            background = Instantiate(backgroundPrefab, new Vector2(0, 0), Quaternion.identity);
+            background.transform.SetParent(transform.parent.parent);
+            background.transform.localPosition = new Vector3(0, 0);
+            cardCopy = Instantiate(cardPrefab, new Vector2(200,200), Quaternion.identity).GetComponent<Card>();
+            cardCopy.SetCardScript(this.GetComponent<Card>().cardScript);
+            cardCopy.transform.SetParent(transform.parent.parent);
+            cardCopy.transform.localPosition = new Vector3(0, 0, 0);
+            cardCopy.transform.localScale += new Vector3(1.2f,1.2f,0);            
+        }
+    }
+    public void Update()
+    {
+        if(cardCopy == null)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Destroy(cardCopy.gameObject);
+            Destroy(background);
+        }
+    }
+}

@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 2255126585328040907}
   - component: {fileID: 2016435835562734298}
   - component: {fileID: 2270468720879230930}
+  - component: {fileID: 2437972075176927855}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -220,6 +221,7 @@ MonoBehaviour:
   cost: 0
   power: 0
   isGold: 0
+  abilities: []
   isPlayed: 0
   types: 
   category: 0
@@ -256,6 +258,21 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &2437972075176927855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7302317613136443930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51d41bc5596f04ab064d2fcf3fa9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 7302317613136443930}
+  backgroundPrefab: {fileID: 7161886038864279873, guid: 51d509f4eddd6ba448594781c6e78707,
+    type: 3}
 --- !u!1 &7302317613270174132
 GameObject:
   m_ObjectHideFlags: 0

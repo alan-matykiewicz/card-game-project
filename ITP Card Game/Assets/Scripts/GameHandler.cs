@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
 {
@@ -38,4 +39,9 @@ public class GameHandler : MonoBehaviour
         gameData.player2Hand = new List<Card>();
         gameData.player2Deck.Shuffle();
     }
+
+    //public Button getButton()
+    //{
+    //    return 
+    //}
 }
