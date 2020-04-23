@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class GameHandler : MonoBehaviour
 {
     public ScriptableGameData gameData;
+
+    public Player localPlayer;
+    public Player remotePlayer;
+    public TextMeshProUGUI localPlayerName;
+    public TextMeshProUGUI remotePlayerName;
 
     public ScriptableCard[] cards;  //temp
 
@@ -40,8 +48,12 @@ public class GameHandler : MonoBehaviour
         gameData.player2Deck.Shuffle();
     }
 
-    //public Button getButton()
-    //{
-    //    return 
-    //}
+    public void InitPlayers(Player local, Player remote)
+    {
+        localPlayer = local;
+        remotePlayer = remote;
+        localPlayerName.text = localPlayer.NickName;
+        remotePlayerName.text = remotePlayer.NickName;
+    }
+    
 }
