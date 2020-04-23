@@ -662,6 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 1c0fbca4af0d7f245822fa8cb0321b7e, type: 2}
+  localPlayerName: {fileID: 1462999564}
+  remotePlayerName: {fileID: 1607569599}
   cards:
   - {fileID: 11400000, guid: cfa0b22ca0ab3c44fa798d121f87e8a2, type: 2}
   - {fileID: 11400000, guid: cfa0b22ca0ab3c44fa798d121f87e8a2, type: 2}

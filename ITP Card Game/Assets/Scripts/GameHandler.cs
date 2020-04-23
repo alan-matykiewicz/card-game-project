@@ -12,6 +12,7 @@ public class GameHandler : MonoBehaviour
 
     public Player localPlayer;
     public Player remotePlayer;
+
     public TextMeshProUGUI localPlayerName;
     public TextMeshProUGUI remotePlayerName;
 
