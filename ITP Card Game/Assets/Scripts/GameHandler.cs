@@ -27,13 +27,17 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameData.playerCoins = ScriptableGameData.startCoins;
+        gameData.player1Coins = ScriptableGameData.startCoins;
+        gameData.player2Coins = ScriptableGameData.startCoins;
         List<ScriptableCard> l = new List<ScriptableCard>(cards);
         Deck deck = ScriptableObject.CreateInstance("Deck") as Deck;
         deck.Init(l);
-        gameData.playerDeck = deck;
-        gameData.playerHand = new List<Card>();
-        gameData.playerDeck.Shuffle();
+        gameData.player1Deck = deck;
+        gameData.player1Hand = new List<Card>();
+        gameData.player1Deck.Shuffle();
+        gameData.player2Deck = deck;
+        gameData.player2Hand = new List<Card>();
+        gameData.player2Deck.Shuffle();
     }
 
     //public Button getButton()

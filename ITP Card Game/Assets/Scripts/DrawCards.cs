@@ -12,12 +12,12 @@ public class DrawCards : MonoBehaviour
     {
         try
         {
-            if (gameData.playerHand.Count < ScriptableGameData.cardHandLimit)
+            if (gameData.player1Hand.Count < ScriptableGameData.cardHandLimit)
             {
-                ScriptableCard nextCard = gameData.playerDeck.Draw();
+                ScriptableCard nextCard = gameData.player1Deck.Draw();
                 Card card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<Card>();
                 card.SetCardScript(nextCard);
-                gameData.playerHand.Add(card);
+                gameData.player1Hand.Add(card);
                 card.transform.SetParent(playerHand.transform, false);
             }
             else

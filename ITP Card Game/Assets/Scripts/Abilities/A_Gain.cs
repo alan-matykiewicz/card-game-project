@@ -13,6 +13,6 @@ public class A_Gain : Ability
     public override void Use()
     {
         gameData = GameHandler.Instance.gameData;
-        gameData.playerCoins += coinsToGain;
+        gameData.player1Coins += coinsToGain;
     }
 }

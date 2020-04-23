@@ -8,17 +8,17 @@ public class ScriptableGameData : ScriptableObject
     public static byte cardHandLimit = 10;
     public static byte startCoins = 20;
 
-    //PLAYER-DATA
-    //player username
-    public short playerCoins;
-    public short playerVictoryPoints;
-    public Deck playerDeck;
-    public List<Card> playerHand;
+    //PLAYER-1
+    //player 1 username
+    public short player1Coins;
+    public short player1VictoryPoints;
+    public Deck player1Deck;
+    public List<Card> player1Hand;
 
-    //OPPONENT-DATA
-    //enemy username
-    public short opponentCoins;
-    public short opponentVictoryPoints;
-    public Deck opponentDeck;
-    public List<Card> opponentHand;
+    //PLAYER-2
+    //player 2 username
+    public short player2Coins;
+    public short player2VictoryPoints;
+    public Deck player2Deck;
+    public List<Card> player2Hand;
 }
