@@ -84,7 +84,7 @@ public class Card : MonoBehaviour
         costGroup.gameObject.SetActive(false);
         //remove this card from player's hand
         GameHandler handler = GameHandler.Instance;
-        handler.gameData.playerHand.Remove(this);
+        handler.gameData.player1Hand.Remove(this);
 
         //when a card is played, all of its abilities are used
         if (abilities != null)
