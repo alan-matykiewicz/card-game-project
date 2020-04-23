@@ -36,6 +36,11 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        localPlayer = NetworkManager.instance.GetLocalPlayer();
+        remotePlayer = NetworkManager.instance.GetRemotePlayer();
+        localPlayerName.text = localPlayer.NickName;
+        remotePlayerName.text = remotePlayer.NickName;
+
         gameData.player1Coins = ScriptableGameData.startCoins;
         gameData.player2Coins = ScriptableGameData.startCoins;
         List<ScriptableCard> l = new List<ScriptableCard>(cards);
@@ -47,14 +52,6 @@ public class GameHandler : MonoBehaviour
         gameData.player2Deck = deck;
         gameData.player2Hand = new List<Card>();
         gameData.player2Deck.Shuffle();
-    }
-
-    public void InitPlayers(Player local, Player remote)
-    {
-        localPlayer = local;
-        remotePlayer = remote;
-        localPlayerName.text = localPlayer.NickName;
-        remotePlayerName.text = remotePlayer.NickName;
     }
     
 }

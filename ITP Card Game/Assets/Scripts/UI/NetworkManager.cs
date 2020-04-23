@@ -57,6 +57,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Connected to master");
         if (isConnecting)
         {
+            waitingStatusText.SetText("Connected to master. Searching...");
             PhotonNetwork.JoinRandomRoom();
         }
     }
@@ -93,17 +94,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             Debug.Log("Match is ready to begin");
             //logs all players in current room
             Dictionary<int, Player> dict = PhotonNetwork.CurrentRoom.Players;
-            Player local = PhotonNetwork.LocalPlayer;
-            Player remote = null;
             foreach (KeyValuePair<int, Player> item in dict)
             {
                 Debug.Log("Key: " + item.Key + ", Value: " + item.Value.NickName);
-                if (item.Value != PhotonNetwork.LocalPlayer)
-                {
-                    remote = item.Value;
-                }
             }
-            GameHandler.Instance.InitPlayers(local, remote);
         }
     }
 
@@ -119,17 +113,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel("MainScene");
             //logs all players in current room
             Dictionary<int, Player> dict = PhotonNetwork.CurrentRoom.Players;
-            Player local = PhotonNetwork.LocalPlayer;
-            Player remote = null;
             foreach (KeyValuePair<int, Player> item in dict)
             {
                 Debug.Log("Key: "+item.Key+", Value: "+item.Value.NickName);
-                if(item.Value != PhotonNetwork.LocalPlayer)
-                {
-                    remote = item.Value;
-                }
             }
-            GameHandler.Instance.InitPlayers(local, remote);
         }
     }
 
@@ -138,5 +125,23 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log(otherPlayer.NickName + " disconnected.");
         PhotonNetwork.LoadLevel("Menu");
         PhotonNetwork.LeaveRoom();
+    }
+
+    public Player GetLocalPlayer()
+    {
+        return PhotonNetwork.LocalPlayer;
+    }
+
+    public Player GetRemotePlayer()
+    {
+        Dictionary<int, Player> dict = PhotonNetwork.CurrentRoom.Players;
+        foreach (KeyValuePair<int, Player> item in dict)
+        {
+            if (!item.Value.Equals(PhotonNetwork.LocalPlayer))
+            {
+                return item.Value;
+            }
+        }
+        return null;
     }
 }
