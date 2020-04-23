@@ -70,7 +70,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             continueButton.enabled = true;
         }
         Debug.Log($"Disconnected due to: {cause}");
-        PhotonNetwork.LoadLevel("Menu");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -111,5 +110,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 Debug.Log("Key: "+item.Key+", Value: "+item.Value.NickName);
             }
         }
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        Debug.Log(otherPlayer.NickName + " disconnected.");
+        PhotonNetwork.LoadLevel("Menu");
     }
 }
