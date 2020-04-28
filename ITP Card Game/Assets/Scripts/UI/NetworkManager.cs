@@ -39,6 +39,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Disconnect();
             isConnecting = false;
+            waitingStatusText.enabled = false;
         }        
     }
 
