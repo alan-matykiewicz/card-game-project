@@ -67,11 +67,8 @@ public class GameHandler : MonoBehaviour
                 Card card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<Card>();
                 gameData.player2Hand.Add(card);
                 card.transform.SetParent(player2Hand.transform, false);
+                card.Flip();
             }
-        }else if(curCount > amount)
-        {
-            gameData.player2Hand.RemoveAt(0);
-            Destroy(player2Hand.GetComponentInChildren<Card>());
         }
     }
     

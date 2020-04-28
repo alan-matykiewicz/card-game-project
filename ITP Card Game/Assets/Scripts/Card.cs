@@ -96,6 +96,22 @@ public class Card : MonoBehaviour
         }
     }
 
+    public void Flip()
+    {
+        Transform front = transform.Find("Card Front");
+        Transform backside = transform.Find("Card Back");
+        if (front.gameObject.activeSelf)
+        {
+            front.gameObject.SetActive(false);
+            backside.gameObject.SetActive(true);
+        }
+        else
+        {
+            front.gameObject.SetActive(true);
+            backside.gameObject.SetActive(false);
+        }
+    }
+
     public void SetCardScript(ScriptableCard script)
     {
         if (script != null)
