@@ -21,6 +21,9 @@ public class GameHandler : MonoBehaviour
     private static GameHandler _instance;
     public static GameHandler Instance { get { return _instance; } }
 
+    public GameObject cardPrefab;
+    public GameObject player2Hand;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -52,6 +55,24 @@ public class GameHandler : MonoBehaviour
         gameData.player2Deck = deck;
         gameData.player2Hand = new List<Card>();
         gameData.player2Deck.Shuffle();
+    }
+
+    public void SetEnemyCardAmount(int amount)
+    {
+        int curCount = gameData.player2Hand.Count;
+        if(amount > curCount)
+        {
+            for(int i = curCount; i < amount; i++)
+            {
+                Card card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<Card>();
+                gameData.player2Hand.Add(card);
+                card.transform.SetParent(player2Hand.transform, false);
+            }
+        }else if(curCount > amount)
+        {
+            gameData.player2Hand.RemoveAt(0);
+            Destroy(player2Hand.GetComponentInChildren<Card>());
+        }
     }
     
 }
