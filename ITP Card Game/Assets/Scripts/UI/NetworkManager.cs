@@ -140,6 +140,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log($"Opponent has {opponentCardsAmount} cards");
     }
 
+    /// RPC Calls ///
+
+    public void CardDraw(int cards) => this.photonView.RPC("RemoteCards", RpcTarget.Others, cards);
+
     /// ///
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
