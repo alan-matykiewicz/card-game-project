@@ -19,7 +19,7 @@ public class DrawCards : MonoBehaviour
                 card.SetCardScript(nextCard);
                 gameData.player1Hand.Add(card);
                 card.transform.SetParent(playerHand.transform, false);
-                //NetworkManager.instance.photonView.RPC("RemoteCards", Photon.Pun.RpcTarget.Others);
+                NetworkManager.instance.photonView.RPC("RemoteCards", Photon.Pun.RpcTarget.Others, gameData.player1Hand.Count);
             }
             else
             {
