@@ -33,9 +33,8 @@ public class Card : MonoBehaviour
     public CardType[] types;
     public CardCategory category;
     public Faction faction;
-
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
         cardNameText.text       = cardScript.name;
         descriptionText.text    = cardScript.description;
