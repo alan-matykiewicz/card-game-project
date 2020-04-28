@@ -73,6 +73,9 @@ public class Card : MonoBehaviour
             typeText.text = "Instant";
         }
 
+        transform.Find("Card Front").gameObject.SetActive(true);
+        transform.Find("Card Back").gameObject.SetActive(false);
+
         abilities = cardScript.abilities;
     }
 
