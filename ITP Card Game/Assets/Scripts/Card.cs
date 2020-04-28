@@ -118,7 +118,7 @@ public class Card : MonoBehaviour
     {
         if (script != null)
             cardScript = script;
-        Start();
+        Awake();
     }
 
     public bool IsPlayed()
