@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MainMenuHandler : MonoBehaviour
 {
     public GameObject mainMenuPrefab;
@@ -17,6 +18,14 @@ public class MainMenuHandler : MonoBehaviour
     {
         mainMenuPrefab.SetActive(false);
         joinLobbyMenuPrefab.SetActive(true);
+    }
+
+    public void GoToMainMenu()
+    {
+        NetworkManager.Disconnect();
+        mainMenuPrefab.SetActive(true);
+        joinLobbyMenuPrefab.SetActive(false);
+
     }
 
     public void QuitGame()

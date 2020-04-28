@@ -33,6 +33,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public static void Disconnect()
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.Disconnect();
+        }
+        
+    }
+
     public void FindOpponent()
     {
         isConnecting = true;
