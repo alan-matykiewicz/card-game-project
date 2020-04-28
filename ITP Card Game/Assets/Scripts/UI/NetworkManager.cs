@@ -98,6 +98,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             {
                 Debug.Log("Key: " + item.Key + ", Value: " + item.Value.NickName);
             }
+            isConnecting = false;
         }
     }
 
@@ -108,7 +109,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             PhotonNetwork.CurrentRoom.IsOpen = false;
             Debug.Log("Match is ready to begin. " + newPlayer.NickName);
             waitingStatusText.text = "Opponent Found";
-
+            isConnecting = false;
             //this line loads the game scene for all player in the room
             PhotonNetwork.LoadLevel("MainScene");
             //logs all players in current room
@@ -119,6 +120,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             }
         }
     }
+
+    /// RPC & Co ///
+    
+    [PunRPC]
+    public void RemoteCards(int opponentCardsAmount)
+    {
+        Debug.Log($"Opponent has {opponentCardsAmount} cards");
+    }
+
+    /// ///
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
