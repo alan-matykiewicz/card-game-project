@@ -22,7 +22,7 @@ public class MainMenuHandler : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        NetworkManager.Disconnect();
+        NetworkManager.instance.Disconnect();
         mainMenuPrefab.SetActive(true);
         joinLobbyMenuPrefab.SetActive(false);
 
