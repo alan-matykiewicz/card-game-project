@@ -5,7 +5,7 @@ using UnityEngine;
 public class DrawCards : MonoBehaviour
 {
     public GameObject cardPrefab;
-    public GameObject playerHand;
+    public GameObject player1Hand;
     public ScriptableGameData gameData;
 
     public void OnClick()
@@ -18,7 +18,7 @@ public class DrawCards : MonoBehaviour
                 Card card = Instantiate(cardPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<Card>();
                 card.SetCardScript(nextCard);
                 gameData.player1Hand.Add(card);
-                card.transform.SetParent(playerHand.transform, false);
+                card.transform.SetParent(player1Hand.transform, false);
                 NetworkManager.instance.CardDraw(GameHandler.Instance.gameData.player1Hand.Count);
             }
             else

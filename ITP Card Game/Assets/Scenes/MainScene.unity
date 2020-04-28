@@ -472,6 +472,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 073ae7af758bca94b8de49f0601caad0, type: 3}
+--- !u!1 &622998761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4782428773599443496, guid: 073ae7af758bca94b8de49f0601caad0,
+    type: 3}
+  m_PrefabInstance: {fileID: 622998760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &668416960
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 7302317613136443930, guid: 87d3bdee2fa94314e80c5aaae8f131b4,
     type: 3}
-  playerHand: {fileID: 1975746771770220026}
+  player1Hand: {fileID: 1975746771770220026}
   gameData: {fileID: 11400000, guid: 1c0fbca4af0d7f245822fa8cb0321b7e, type: 2}
 --- !u!1 &853115683
 GameObject:
@@ -676,6 +682,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9ee8d085df6897948b6f6ebb3939d890, type: 2}
   - {fileID: 11400000, guid: d8929d03579044c48aac793c8959eab0, type: 2}
   - {fileID: 11400000, guid: b9bcec20745d54e4d843a43df02b5b0d, type: 2}
+  cardPrefab: {fileID: 7302317613136443930, guid: 87d3bdee2fa94314e80c5aaae8f131b4,
+    type: 3}
+  player2Hand: {fileID: 622998761}
 --- !u!1 &1005796396
 GameObject:
   m_ObjectHideFlags: 0

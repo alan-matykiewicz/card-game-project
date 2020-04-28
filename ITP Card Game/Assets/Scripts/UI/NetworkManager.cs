@@ -138,11 +138,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public void RemoteCards(int opponentCardsAmount)
     {
         Debug.Log($"Opponent has {opponentCardsAmount} cards");
+        GameHandler.Instance.SetEnemyCardAmount(opponentCardsAmount);
     }
 
     /// RPC Calls ///
 
-    public void CardDraw(int cards) => this.photonView.RPC("RemoteCards", RpcTarget.Others, cards);
+    public void CardDraw(int cards) {
+        PhotonView view = PhotonView.Get(this);
+        if(view != null)
+        {
+            view.RPC("RemoteCards", RpcTarget.Others, cards);
+        }
+    }
 
     /// ///
 
