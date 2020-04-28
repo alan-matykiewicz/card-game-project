@@ -48,6 +48,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         
         nameInputField.enabled = false;
         continueButton.enabled = false;
+        waitingStatusText.enabled = true;
         waitingStatusText.SetText("Searching...");
 
         if (PhotonNetwork.IsConnected)
