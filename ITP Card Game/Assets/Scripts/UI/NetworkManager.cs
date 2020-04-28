@@ -35,9 +35,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void Disconnect()
     {
-        if (PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected || isConnecting)
         {
             PhotonNetwork.Disconnect();
+            isConnecting = false;
         }        
     }
 
