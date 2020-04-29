@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fa86e919a23b344a9a1400b4437ff2b, type: 3}
-  m_Name: New Card
+  m_Name: Steward
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cost: 0
-  power: 0
+  name: Steward
+  description: 'Active: Gain 4 for each other allied non-<Building> cards in play.
+    Charges: 1'
+  cost: 10
+  power: 4
   isGold: 0
   abilities: []
-  types: 
+  types: 00000000
   category: 0
   faction: 0
   image: {fileID: 0}
