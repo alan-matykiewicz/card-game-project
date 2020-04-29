@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa86e919a23b344a9a1400b4437ff2b, type: 3}
   m_Name: Divine Strike
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cost: 0
+  name: Divine Strike
+  description: 'Attack 2. If Injured, Attack 5 instead. '
+  cost: 7
   power: 0
   isGold: 0
   abilities: []
   types: 
-  category: 0
+  category: 1
   faction: 0
   image: {fileID: 0}

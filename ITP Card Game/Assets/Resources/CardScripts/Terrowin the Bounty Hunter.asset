@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa86e919a23b344a9a1400b4437ff2b, type: 3}
   m_Name: Terrowin the Bounty Hunter
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  cost: 0
-  power: 0
-  isGold: 0
+  name: Terrowin the Bounty Hunter
+  description: 'Deploy: Attack 3. If this card kills an enemy unit, Gain 30. '
+  cost: 10
+  power: 8
+  isGold: 1
   abilities: []
-  types: 
+  types: 00000000
   category: 0
   faction: 0
   image: {fileID: 0}
