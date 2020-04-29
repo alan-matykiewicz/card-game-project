@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fa86e919a23b344a9a1400b4437ff2b, type: 3}
-  m_Name: Fresh Recruit
+  m_Name: Fresh Recruits
   m_EditorClassIdentifier: 
   name: Fresh Recruits
   description: 'Deploy: Give an allied unit Vitality 4. '
   cost: 8
   power: 6
   isGold: 0
+  abilities: []
   types: 03000000
   category: 0
   faction: 0

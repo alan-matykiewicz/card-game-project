@@ -32,5 +32,6 @@ MonoBehaviour:
   - ClickRpc
   - DestroyRpc
   - RemoteCards
+  - RemoteCardPlayed
   DisableAutoOpenWizard: 1
   ShowSettings: 1

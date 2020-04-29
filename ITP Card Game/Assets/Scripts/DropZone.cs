@@ -13,9 +13,11 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             if(dB.ogParent != this.transform)
             {
                 Card c = eventData.pointerDrag.GetComponent<Card>();
-                c.PlayCard();
+                if (c.PlayCard())
+                {
+                    dB.ogParent = this.transform;
+                }
             }
-            dB.ogParent = this.transform;
         }
     }
 

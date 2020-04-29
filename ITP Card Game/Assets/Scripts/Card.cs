@@ -26,9 +26,8 @@ public class Card : MonoBehaviour
     public bool isGold;
 
     public Ability[] abilities;
-
-    [SerializeField]
-    private bool isPlayed = false;
+    
+    public bool isPlayed = false;
 
     public CardType[] types;
     public CardCategory category;
@@ -78,8 +77,16 @@ public class Card : MonoBehaviour
         abilities = cardScript.abilities;
     }
 
-    public void PlayCard()
+    /**
+     * returns false if this card can't be played right now, 
+     * for example if this cards cost exceeds the player's coins
+     * returns true if this card has been played successfully
+     */
+    public bool PlayCard()
     {
+        int playerCoins = GameHandler.Instance.gameData.player1Coins;
+        if (this.cost > playerCoins) return false;
+
         isPlayed = true;
         //disable / dont show card cost anymore, because the card was already paid for
         Transform costGroup = transform.Find("Card Front/Cost Group");
@@ -87,6 +94,12 @@ public class Card : MonoBehaviour
         //remove this card from player's hand
         GameHandler handler = GameHandler.Instance;
         handler.gameData.player1Hand.Remove(this);
+
+        //todo: subtract this cards cost from playercoins
+
+        //send the played card over the network
+        int sibIndex = this.GetComponent<DragBehaviour>().GetPlaceholderSiblingIndex();
+        NetworkManager.instance.CardPlayed(this.name, sibIndex);
 
         //when a card is played, all of its abilities are used
         if (abilities != null)
@@ -96,6 +109,7 @@ public class Card : MonoBehaviour
                 a.Use();
             }
         }
+        return true;
     }
 
     public void Flip()
