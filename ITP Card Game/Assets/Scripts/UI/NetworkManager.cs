@@ -155,7 +155,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonView view = PhotonView.Get(this);
         if(view != null)
         {
-            view.RPC("RemoteCards", RpcTarget.Others, cards);//
+            view.RPC("RemoteCards", RpcTarget.Others, cards);// 
         }
     }
 

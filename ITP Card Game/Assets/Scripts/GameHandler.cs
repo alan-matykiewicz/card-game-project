@@ -70,6 +70,8 @@ public class GameHandler : MonoBehaviour
                 gameData.player2Hand.Add(card);
                 card.transform.SetParent(player2Hand.transform, false);
                 card.Flip();
+                card.GetComponent<DragBehaviour>().enabled = false;
+                card.GetComponent<CardFocus>().enabled = false;
             }
         }
     }
@@ -88,6 +90,7 @@ public class GameHandler : MonoBehaviour
 
         player2DropZone.GetComponent<DropZoneSpacing>().CheckSpacing();
         card.transform.SetSiblingIndex(sibIndex);
+        card.GetComponent<DragBehaviour>().enabled = false;
     }
     
 }
