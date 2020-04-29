@@ -685,6 +685,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 7302317613136443930, guid: 87d3bdee2fa94314e80c5aaae8f131b4,
     type: 3}
   player2Hand: {fileID: 622998761}
+  player2DropZone: {fileID: 5756728202740844932}
 --- !u!1 &1005796396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,3 +1732,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c667827c167d17459742cad57f024d7, type: 3}
+--- !u!1 &5756728202740844932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5756728202535997035, guid: 3c667827c167d17459742cad57f024d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5756728202740844931}
+  m_PrefabAsset: {fileID: 0}

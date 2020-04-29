@@ -67,7 +67,7 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(ogParent);
-        transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
+        transform.SetSiblingIndex(GetPlaceholderSiblingIndex());
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
@@ -79,5 +79,10 @@ public class DragBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             this.enabled = false;
         }
+    }
+
+    public int GetPlaceholderSiblingIndex()
+    {
+        return placeholder.transform.GetSiblingIndex();
     }
 }

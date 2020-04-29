@@ -141,6 +141,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         GameHandler.Instance.SetEnemyCardAmount(opponentCardsAmount);
     }
 
+    [PunRPC]
+    public void RemoteCardPlayed(string cardName, int sibIndex)
+    {
+        ScriptableCard card = Resources.Load<ScriptableCard>("CardScripts/"+cardName);
+        Debug.Log("Enemy played " + cardName);
+        GameHandler.Instance.EnemyCardPlayed(card, sibIndex);
+    }
+
     /// RPC Calls ///
 
     public void CardDraw(int cards) {
@@ -148,6 +156,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if(view != null)
         {
             view.RPC("RemoteCards", RpcTarget.Others, cards);
+        }
+    }
+
+    public void CardPlayed(string cardName, int sibIndex)
+    {
+        PhotonView view = PhotonView.Get(this);
+        if (view != null)
+        {
+            view.RPC("RemoteCardPlayed", RpcTarget.Others, cardName, sibIndex);
         }
     }
 
