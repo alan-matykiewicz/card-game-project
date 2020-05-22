@@ -28,6 +28,10 @@ MonoBehaviour:
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
-  RpcList: []
+  RpcList:
+  - ClickRpc
+  - DestroyRpc
+  - RemoteCardPlayed
+  - RemoteCards
   DisableAutoOpenWizard: 0
   ShowSettings: 1
